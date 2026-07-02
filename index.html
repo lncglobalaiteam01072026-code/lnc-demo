@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Z<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -475,12 +475,8 @@ var logMsgs=[
   ['ok','[10:32:20]   [OK] jobbank_alberta → 07_unofficial/jobbank/alberta_market.md'],
   ['warn','[10:32:21]   [WARN] bcpnp_eligibility: validation failed — retrying'],
   ['ok','[10:32:23]   [OK] bcpnp_eligibility → ei_eligibility_2024.md'],
-  ['','[10:32:24] >> Crawling: immigration_ca_aaip'],
-  ['ok','[10:32:25]   [OK] immigration_ca_aaip → 01_program_core/aaip/immigration_ca_overview.md'],
-  ['','[10:32:25] >> Crawling: immigration_ca_bcpnp'],
-  ['ok','[10:32:26]   [OK] immigration_ca_bcpnp → 01_program_core/bcpnp/immigration_ca_overview.md'],
-  ['dim','[10:32:26] ─────────────────────────────────────────'],
-  ['info','[10:32:26] Hoàn thành: 31 OK · 5 thất bại'],
+  ['dim','[10:32:24] ─────────────────────────────────────────'],
+  ['info','[10:32:24] Hoàn thành: 29 OK · 5 thất bại'],
   ['dim','[10:32:24] [META] Updated: 00_meta/ → sources.yaml, crawl_log.jsonl'],
   ['info','[10:32:25] Đang đồng bộ lên Google Drive...'],
   ['ok','[10:32:28] Drive sync complete → gdrive:lnc-knowledge-base-temp'],
@@ -698,7 +694,7 @@ function renderCharts(){
 // Patch logMsgs timestamps + dynamic schedule
 (function(){
   function pad(n){return('0'+n).slice(-2);}
-  var offsets=[0,0,1,2,2,2,4,5,5,7,7,8,10,10,10,11,12,14,15,16,17,17,19,20,21,22,23,24,26,27,28,29,30,30,31,32,33,34,35,36,38,38];
+  var offsets=[0,0,1,2,2,2,4,5,5,7,7,8,10,10,10,11,12,14,15,16,17,17,19,20,21,22,23,24,26,27,28,29,30,30,32,35,36,38,38];
   var base=new Date();
   for(var i=0;i<logMsgs.length&&i<offsets.length;i++){
     var d=new Date(base.getTime()+offsets[i]*1000);
