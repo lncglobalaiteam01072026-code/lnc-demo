@@ -1,0 +1,16 @@
+name: Proxy — Trigger IRCC Crawl
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch to lnc_knowledge_base
+        run: |
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${{ secrets.DISPATCH_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/lncglobalaiteam01072026-code/lnc_knowledge_base/actions/workflows/crawl_ircc.yml/dispatches" \
+            -d '{"ref":"main"}'

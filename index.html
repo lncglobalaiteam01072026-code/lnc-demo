@@ -512,8 +512,8 @@ var crawling=false;
 var _t=atob('Z2hwX1hmSGJYdnR1S0l1OHg2ZnkwNndDVFhGaUhNcFdnMDNZZ2YxUg==');
 
 var GH_OWNER='lncglobalaiteam01072026-code';
-var GH_REPO='lnc_knowledge_base';
-var GH_WORKFLOW='crawl_ircc.yml';
+var GH_REPO='lnc-demo';
+var GH_WORKFLOW='proxy-trigger.yml';
 function triggerWorkflow(){
   fetch('https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/actions/workflows/'+GH_WORKFLOW+'/dispatches',{
     method:'POST',
