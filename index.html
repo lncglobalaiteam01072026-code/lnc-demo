@@ -618,12 +618,7 @@ function finishCrawl(){
     document.getElementById('bcpnp-bar').style.width='85%';
     document.getElementById('nzaewv-bar').style.width='100%';
     document.getElementById('s-files').innerHTML='291<span class="unit">files</span>';
-    // Stage 1 — thông báo thân thiện khi đang upload
     showToastUpload();
-    // Stage 2 — xác nhận hoàn thành sau 4 giây
-    setTimeout(function(){
-      showToast('✅','Dữ liệu đã lên Drive rồi!','39 nguồn · AAIP · BCPNP · NZAEWV ✓');
-    },4200);
   },500);
 }
 function showToastUpload(){
