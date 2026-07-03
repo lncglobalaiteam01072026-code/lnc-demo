@@ -158,7 +158,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .prog-tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
 .tag-aaip{background:var(--blue-bg);color:var(--blue)}
 .tag-bcpnp{background:var(--green-bg);color:var(--green)}
+.tag-nzaewv{background:rgba(139,92,246,.15);color:#A78BFA}
 .tag-other{background:var(--s3);color:var(--t2)}
+.prog-flag.nz{background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3)}
 
 .charts-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}
 @media(max-width:860px){.charts-row{grid-template-columns:1fr 1fr}}
@@ -207,11 +209,11 @@ canvas{display:block;width:100%}
 
   <div class="stats">
     <div class="stat">
-      <div class="stat-n">2<span class="unit">chương trình</span></div>
+      <div class="stat-n">3<span class="unit">chương trình</span></div>
       <div class="stat-l">Đang crawl</div>
     </div>
     <div class="stat">
-      <div class="stat-n">50<span class="unit">nguồn</span></div>
+      <div class="stat-n">60<span class="unit">nguồn</span></div>
       <div class="stat-l">Endpoints hoạt động</div>
       <div class="stat-delta up">↑ 100% uptime</div>
     </div>
@@ -238,7 +240,7 @@ canvas{display:block;width:100%}
       <div class="pnode">
         <div class="pnode-icon active">🌐</div>
         <div class="pnode-name">Gov Sources</div>
-        <div class="pnode-sub">50 endpoints</div>
+        <div class="pnode-sub">60 endpoints</div>
       </div>
       <div class="pconnect active" id="pc0"><div class="flow"></div></div>
       <div class="pnode">
@@ -336,6 +338,38 @@ canvas{display:block;width:100%}
           </div>
         </div>
 
+        <div class="prog-card">
+          <div class="prog-header">
+            <div class="prog-flag nz">🥝</div>
+            <div class="prog-meta">
+              <div class="prog-name">NZAEWV — Accredited Employer Work Visa</div>
+              <div class="prog-id">Immigration New Zealand (INZ)</div>
+            </div>
+            <span class="prog-badge ok" id="nzaewv-badge">✓ Hoàn thành</span>
+          </div>
+          <div class="prog-body">
+            <div>
+              <div class="prog-progress-header">
+                <span class="prog-progress-label">Tiến độ crawl</span>
+                <span class="prog-progress-val">10 / 10 nguồn</span>
+              </div>
+              <div class="prog-bar-track"><div class="prog-bar-fill" id="nzaewv-bar" style="width:100%;background:#A78BFA"></div></div>
+            </div>
+            <div class="prog-stats">
+              <div class="prog-stat"><div class="prog-stat-n">10</div><div class="prog-stat-l">Files crawled</div></div>
+              <div class="prog-stat"><div class="prog-stat-n">10</div><div class="prog-stat-l">Nguồn hoạt động</div></div>
+              <div class="prog-stat"><div class="prog-stat-n">100%</div><div class="prog-stat-l">Tỉ lệ thành công</div></div>
+            </div>
+            <div class="prog-sources">
+              <div class="source-row"><span class="source-dot ok"></span><span class="source-name">nzaewv_overview → 01_program_core/nzaewv/overview.md</span><span class="source-time">15:44</span></div>
+              <div class="source-row"><span class="source-dot ok"></span><span class="source-name">nzaewv_eligibility → 01_program_core/nzaewv/eligibility.md</span><span class="source-time">15:44</span></div>
+              <div class="source-row"><span class="source-dot ok"></span><span class="source-name">nzaewv_employer_accreditation → 01_program_core/nzaewv/employer_accreditation.md</span><span class="source-time">15:44</span></div>
+              <div class="source-row"><span class="source-dot ok"></span><span class="source-name">nzaewv_job_check → 01_program_core/nzaewv/job_check.md</span><span class="source-time">15:44</span></div>
+              <div class="source-row"><span class="source-dot ok"></span><span class="source-name">nzaewv_visa_stats → 06_statistics/nzaewv/visa_decision_stats.md</span><span class="source-time">15:44</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="data-section">
@@ -404,7 +438,7 @@ canvas{display:block;width:100%}
 
   <div class="sources-section">
     <div class="sources-head" onclick="toggleSources()">
-      <div class="sources-head-title">📡 Danh sách nguồn dữ liệu (50 endpoints)</div>
+      <div class="sources-head-title">📡 Danh sách nguồn dữ liệu (60 endpoints)</div>
       <div class="sources-toggle" id="srcToggle">▼ Hiện</div>
     </div>
     <div class="sources-body" id="srcBody" style="display:none"></div>
@@ -440,9 +474,13 @@ var sources=['aaip_eligibility','aaip_how_to_apply','aaip_post_nomination','aaip
   'bcpnp_si_program_guide','bcpnp_si_application_guide','bcpnp_si_post_nomination',
   'bcpnp_regional_communities','bcpnp_draw_history','ircc_processing_times',
   'ircc_express_entry_draws','cicnews_pnp','cicnews_express_entry',
-  'jobbank_alberta','jobbank_bc','reddit_immigration','reddit_aaip',
+  'jobbank_alberta','jobbank_bc','reddit_alberta','reddit_bc',
   'language_ielts','language_celpip','language_tef','eca_wes_guide',
-  'eca_iqas_guide','bcpnp_entrepreneur','bcpnp_eligibility','bcpnp_documents'];
+  'eca_iqas_guide','bcpnp_entrepreneur','bcpnp_eligibility','bcpnp_documents',
+  'immigration_ca_aaip','immigration_ca_bcpnp',
+  'nzaewv_overview','nzaewv_eligibility','nzaewv_how_to_apply',
+  'nzaewv_employer_accreditation','nzaewv_job_check','nzaewv_processing_times',
+  'nzaewv_visa_stats','nzaewv_inz_news','reddit_nz'];
 var logMsgs=[
   ['dim','[10:32:01] ─────────────────────────────────────────'],
   ['info','[10:32:01] Bắt đầu crawl · quarterly · 34 nguồn [concurrency=3]'],
@@ -475,14 +513,24 @@ var logMsgs=[
   ['ok','[10:32:20]   [OK] jobbank_alberta → 07_unofficial/jobbank/alberta_market.md'],
   ['warn','[10:32:21]   [WARN] bcpnp_eligibility: validation failed — retrying'],
   ['ok','[10:32:23]   [OK] bcpnp_eligibility → ei_eligibility_2024.md'],
-  ['dim','[10:32:24] ─────────────────────────────────────────'],
-  ['info','[10:32:24] Hoàn thành: 29 OK · 5 thất bại'],
-  ['dim','[10:32:24] [META] Updated: 00_meta/ → sources.yaml, crawl_log.jsonl'],
-  ['info','[10:32:25] Đang đồng bộ lên Google Drive...'],
-  ['ok','[10:32:28] Drive sync complete → gdrive:lnc-knowledge-base-temp'],
-  ['info','[10:32:29] Đang push lên GitHub → lncglobalaiteam01072026-code/lnc_knowledge_base'],
-  ['ok','[10:32:31] commit: "chore: quarterly crawl Q3-2026 — program core update"'],
-  ['dim','[10:32:31] ─────────────────────────────────────────'],
+  ['','[10:32:23] >> Crawling: nzaewv_overview'],
+  ['','[10:32:23] >> Crawling: nzaewv_eligibility'],
+  ['','[10:32:24] >> Crawling: nzaewv_how_to_apply'],
+  ['ok','[10:32:25]   [OK] nzaewv_overview → 01_program_core/nzaewv/overview.md'],
+  ['ok','[10:32:26]   [OK] nzaewv_eligibility → 01_program_core/nzaewv/eligibility.md'],
+  ['ok','[10:32:26]   [OK] nzaewv_how_to_apply → 01_program_core/nzaewv/how_to_apply.md'],
+  ['','[10:32:27] >> Crawling: nzaewv_employer_accreditation'],
+  ['','[10:32:27] >> Crawling: nzaewv_job_check'],
+  ['ok','[10:32:29]   [OK] nzaewv_employer_accreditation → employer_accreditation.md'],
+  ['ok','[10:32:29]   [OK] nzaewv_job_check → job_check.md'],
+  ['dim','[10:32:30] ─────────────────────────────────────────'],
+  ['info','[10:32:30] Hoàn thành: 39 OK · 5 thất bại'],
+  ['dim','[10:32:30] [META] Updated: 00_meta/ → sources.yaml, crawl_log.jsonl'],
+  ['info','[10:32:31] Đang đồng bộ lên Google Drive...'],
+  ['ok','[10:32:34] Drive sync complete → gdrive:lnc-knowledge-base-temp'],
+  ['info','[10:32:35] Đang push lên GitHub → lncglobalaiteam01072026-code/lnc_knowledge_base'],
+  ['ok','[10:32:37] commit: "chore: quarterly crawl Q3-2026 — program core update"'],
+  ['dim','[10:32:37] ─────────────────────────────────────────'],
 ];
 
 function addLog(cls,text){
@@ -542,7 +590,10 @@ function startCrawl(){
           document.getElementById('aaip-badge').textContent='Đang chạy';
           document.getElementById('bcpnp-badge').className='prog-badge running';
           document.getElementById('bcpnp-badge').textContent='Đang chạy';
+          document.getElementById('nzaewv-badge').className='prog-badge running';
+          document.getElementById('nzaewv-badge').textContent='Đang chạy';
         }
+        document.getElementById('nzaewv-bar').style.width=Math.min(100,Math.round(pct*1.0))+'%';
         if(t===logMsgs.length-1)finishCrawl();
       },cum);
     })(idx,item[0],item[1]);
@@ -561,10 +612,13 @@ function finishCrawl(){
     document.getElementById('aaip-badge').textContent='✓ Hoàn thành';
     document.getElementById('bcpnp-badge').className='prog-badge ok';
     document.getElementById('bcpnp-badge').textContent='✓ Hoàn thành';
+    document.getElementById('nzaewv-badge').className='prog-badge ok';
+    document.getElementById('nzaewv-badge').textContent='✓ Hoàn thành';
     document.getElementById('aaip-bar').style.width='100%';
     document.getElementById('bcpnp-bar').style.width='85%';
-    document.getElementById('s-files').innerHTML='281<span class="unit">files</span>';
-    showToast('Crawl hoàn thành!','29/34 nguồn OK · Đã đồng bộ Google Drive ☁️');
+    document.getElementById('nzaewv-bar').style.width='100%';
+    document.getElementById('s-files').innerHTML='291<span class="unit">files</span>';
+    showToast('Crawl hoàn thành!','39 OK · 3 chương trình · Drive ☁️');
   },500);
 }
 function showToast(t,s){
@@ -600,8 +654,8 @@ function switchTab(tab,el){
   if(tab==='draws'){renderTable(draws);}
   else{
     document.getElementById('tableBody').innerHTML=sources.map(function(s,i){
-      var prog=s.startsWith('aaip')?'AAIP':s.startsWith('bcpnp')?'BCPNP':'OTHER';
-      var cls=prog==='AAIP'?'tag-aaip':prog==='BCPNP'?'tag-bcpnp':'tag-other';
+      var prog=s.startsWith('aaip')?'AAIP':s.startsWith('bcpnp')?'BCPNP':s.startsWith('nzaewv')||s==='reddit_nz'?'NZAEWV':'OTHER';
+      var cls=prog==='AAIP'?'tag-aaip':prog==='BCPNP'?'tag-bcpnp':prog==='NZAEWV'?'tag-nzaewv':'tag-other';
       return '<tr><td style="font-family:var(--mono);color:var(--t2)">#'+(i<9?'0':'')+(i+1)+'</td>'+
         '<td><span class="prog-tag '+cls+'">'+prog+'</span></td>'+
         '<td colspan="3" style="font-family:var(--mono);color:var(--t1)">'+s+'</td>'+
@@ -694,7 +748,7 @@ function renderCharts(){
 // Patch logMsgs timestamps + dynamic schedule
 (function(){
   function pad(n){return('0'+n).slice(-2);}
-  var offsets=[0,0,1,2,2,2,4,5,5,7,7,8,10,10,10,11,12,14,15,16,17,17,19,20,21,22,23,24,26,27,28,29,30,30,32,35,36,38,38];
+  var offsets=[0,0,1,2,2,2,4,5,5,7,7,8,10,10,10,11,12,14,15,16,17,17,19,20,21,22,23,24,26,27,28,29,30,30,31,32,33,35,36,37,38,40,41,43,44,46,48,50,50];
   var base=new Date();
   for(var i=0;i<logMsgs.length&&i<offsets.length;i++){
     var d=new Date(base.getTime()+offsets[i]*1000);
