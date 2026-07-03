@@ -447,7 +447,7 @@ canvas{display:block;width:100%}
 </div>
 
 <div class="toast" id="toast">
-  <div class="toast-icon">✅</div>
+  <div class="toast-icon" id="toastIcon">☁️</div>
   <div>
     <div id="toastText">Crawl hoàn thành thành công!</div>
     <div class="toast-sub" id="toastSub">29/34 nguồn · Đã đồng bộ Google Drive</div>
@@ -618,11 +618,24 @@ function finishCrawl(){
     document.getElementById('bcpnp-bar').style.width='85%';
     document.getElementById('nzaewv-bar').style.width='100%';
     document.getElementById('s-files').innerHTML='291<span class="unit">files</span>';
-    showToast('Crawl hoàn thành!','39 OK · 3 chương trình · Drive ☁️');
+    // Stage 1 — thông báo thân thiện khi đang upload
+    showToastUpload();
+    // Stage 2 — xác nhận hoàn thành sau 4 giây
+    setTimeout(function(){
+      showToast('✅','Dữ liệu đã lên Drive rồi!','39 nguồn · AAIP · BCPNP · NZAEWV ✓');
+    },4200);
   },500);
 }
-function showToast(t,s){
+function showToastUpload(){
   var el=document.getElementById('toast');
+  document.getElementById('toastIcon').textContent='☁️';
+  document.getElementById('toastText').textContent='Xin chờ vài phút nhé!';
+  document.getElementById('toastSub').textContent='Đang đưa dữ liệu lên Drive cho bạn... ⏳';
+  el.classList.add('show');
+}
+function showToast(icon,t,s){
+  var el=document.getElementById('toast');
+  document.getElementById('toastIcon').textContent=icon||'✅';
   document.getElementById('toastText').textContent=t;
   document.getElementById('toastSub').textContent=s;
   el.classList.add('show');
