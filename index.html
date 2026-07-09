@@ -214,7 +214,7 @@ canvas{display:block;width:100%}
       <div class="stat-l">Đang crawl</div>
     </div>
     <div class="stat">
-      <div class="stat-n">121<span class="unit">nguồn</span></div>
+      <div class="stat-n">161<span class="unit">nguồn</span></div>
       <div class="stat-l">Endpoints hoạt động</div>
       <div class="stat-delta up">↑ 100% uptime</div>
     </div>
@@ -241,7 +241,7 @@ canvas{display:block;width:100%}
       <div class="pnode">
         <div class="pnode-icon active">🌐</div>
         <div class="pnode-name">Gov Sources</div>
-        <div class="pnode-sub">121 sources</div>
+        <div class="pnode-sub">161 sources</div>
       </div>
       <div class="pconnect active" id="pc0"><div class="flow"></div></div>
       <div class="pnode">
@@ -489,7 +489,7 @@ canvas{display:block;width:100%}
 
   <div class="sources-section">
     <div class="sources-head" onclick="toggleSources()">
-      <div class="sources-head-title">📡 Danh sách nguồn dữ liệu (121 endpoints)</div>
+      <div class="sources-head-title">📡 Danh sách nguồn dữ liệu (161 endpoints)</div>
       <div class="sources-toggle" id="srcToggle">▼ Hiện</div>
     </div>
     <div class="sources-body" id="srcBody" style="display:none"></div>
@@ -558,11 +558,20 @@ var sources=[
   'ircc_ee_who_can_apply','ircc_ee_check_score','ircc_ee_documents','ircc_ee_create_profile',
   'ircc_ee_rounds_invitations','ircc_ee_after_apply','ircc_ee_application_approved','ircc_common_supporting_docs',
   'noc_matrix_overview','noc_it_deep',
-  'ircc_ee_completeness_check','ircc_ee_operations_manual','ircc_financial_proof_guide','ircc_tax_records_guide'];
+  'ircc_ee_completeness_check','ircc_ee_operations_manual','ircc_financial_proof_guide','ircc_tax_records_guide',
+  'noc_profile_21232','noc_profile_21231','noc_profile_21233','noc_profile_21234','noc_profile_21230',
+  'noc_profile_21221','noc_profile_21222','noc_profile_21223','noc_profile_21211','noc_profile_21210',
+  'noc_profile_20010','noc_profile_20012','noc_profile_11100','noc_profile_11101','noc_profile_10010',
+  'jobbank_wage_21232','jobbank_wage_21231','jobbank_wage_21233','jobbank_wage_21234','jobbank_wage_21230',
+  'jobbank_wage_21221','jobbank_wage_21222','jobbank_wage_21223','jobbank_wage_21211','jobbank_wage_21210',
+  'jobbank_wage_20010','jobbank_wage_20012','jobbank_wage_11100','jobbank_wage_11101','jobbank_wage_10010',
+  'wp_overview','wp_need_permit','wp_apply','wp_extend','wp_open_permit',
+  'wp_employer_specific','esdc_median_wage','esdc_hire_foreign_worker','wp_pdi_genuineness',
+  'ircc_work_permit_pdi_deep'];
 var logMsgs=[
   ['dim','[10:32:01] ─────────────────────────────────────────'],
   ['info','[10:32:01] Bắt đầu crawl · quarterly · 32 nguồn [concurrency=3]'],
-  ['dim','[10:32:01] Đọc config/sources.json → 121 sources total'],
+  ['dim','[10:32:01] Đọc config/sources.json → 161 sources total'],
   ['','[10:32:02] >> Crawling: aaip_eligibility'],
   ['','[10:32:02] >> Crawling: aaip_how_to_apply'],
   ['','[10:32:02] >> Crawling: aaip_post_nomination'],
